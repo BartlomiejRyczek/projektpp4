@@ -6,9 +6,11 @@ import pl.bryczek.creditcard.CreditCantBeReassignException;
 import pl.bryczek.creditcard.CreditCard;
 import pl.bryczek.creditcard.InsufficientFoundsException;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Collections;
 
 public class CreditCardTest {
