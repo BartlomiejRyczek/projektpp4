@@ -95,22 +95,4 @@ public class CreditCardTest {
                 ()-> card.pay(BigDecimal.valueOf(200))
         );
     }
-    @Test
-    void timeAssertion(){
-        assertThat(Instant.now())
-                .isInThePast();
-    }
-
-    @Test
-    void listAssertion(){
-        assertThat(Collections.emptyList())
-                .isEmpty();
-    }
-
-    @Test
-    void stringAssert (){
-        assertThat("Hello World")
-                .conains("Hello")
-                .hasSize(11);
-    }
 }
