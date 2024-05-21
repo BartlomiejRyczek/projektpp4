@@ -10,6 +10,15 @@ import static org.assertj.core.api.Assertions.*;
 public class SalesTest {
     @Test
     void itAllowsToAddProductToCart(){
+        SalesFacade sales = thereIsSalesFacade();
+        String customerId = thereIsCustomer("Bartek");
+        String productId = thereIsProduct("x", BigDecimal.valueOf(10.10));
+
+        sales.addProductToCard(customerId, productId);
+        Offer offer = sales.getCurrentOffer(customerId);
+
+        assertThat(offer.getTotal().isEqualTo(BigDecimal.valueOf(10.10));
+        assertThat(offer.getItemsCount()).isEqualTo(1);
 
     }
 
@@ -45,5 +54,9 @@ public class SalesTest {
 
     private SalesFacade thereIsSalesFacade(){
         return  new SalesFacade();
+    }
+
+    private String thereIsProduct(String name, BigDecimal price) { return null;
+
     }
 }
